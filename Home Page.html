@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>What can Melbourne do to reach its 2050 carbon reduction targets?</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Link to your CSS file -->
+    <style>
+        h1 {
+            text-align: left;
+            font-family: 'Copperplate', fantasy;
+            color: white;
+            margin: 0; /* Remove default margin */
+        }
+        h2 {
+            text-align: center;
+            font-family: 'Oswald', sans-serif;
+            font-size: 30px;
+            color: white;
+        }
+        h3 {
+            text-align: center;
+            color: white;
+            font-size: 40px;
+            font-family: 'blippo', fantasy;
+        }
+        h4 {
+            text-align: center;
+            color: white;
+            font-size: 23px;
+            font-family: 'Oswald', sans-serif;
+            text-decoration: underline; /* Add underline to h4 */
+        }
+        p {
+            color: white;
+            text-align: center;
+            font-size: 20px;
+            font-family: 'Gill Sans', Gill Sans;
+        }
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: black;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            /* Add top margin to allow more scroll up */
+            margin-top: 75px;
+        }
+        header {
+            background-color: rgb(56, 53, 53);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 20px; /* Add some padding */
+            min-height: 75px;
+            position: fixed; /* Make the header fixed */
+            width: 100%; /* Ensure the header spans the full width */
+            top: 0; /* Position the header at the top */
+            z-index: 1000; /* Ensure the header is above other elements */
+        }
+        nav {
+            display: flex;
+            gap: 10px; /* Space between buttons */
+            padding-right: 30px;
+        }
+        .button {
+            background-color: lightyellow;
+            text-align: center;
+            display: block;
+            width: 175px;
+            height: 50px;
+            font-family: "Comic Sans MS";
+            border: none;
+            transition: box-shadow 0.3s ease, transform 0.3s ease, background-color 0.3s ease; /* Smooth transition */
+            border: 2px solid tan;
+            font-size: auto;
+        }
+        .button:hover {
+            box-shadow: 0 8px 16px rgba(255, 255, 255, 0.4); /* Stronger shadow on hover */
+            transform: scale(1.2); /* Slightly increase size on hover */
+            background-color: yellow; /* Change background color on hover */
+        }
+        .yellow-underline {
+            text-decoration: underline;
+            text-decoration-color: yellow;
+        }
+        .section-box {
+            border: 2px solid white;
+            padding: 10px;
+            margin: 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: rgba(0, 0, 0, 0.8);
+            width: 550px;
+        }
+        .section-title {
+            background-color: rgba(56, 53, 53, 0.8);
+            padding: 10px;
+            width: 550px;
+        }
+        .section-content {
+            padding: 10px;
+            width: 550px;
+        }
+        .section-container {
+            position: relative;
+            width: 1200px;
+            height: 1300px; /* Increase height to accommodate all sections */
+        }
+        .section {
+            position: absolute;
+        }
+        .section:nth-of-type(1) {
+            top: 0px;
+            left: 0px;
+        }
+        .section:nth-of-type(2) {
+            top: 400px; /* Adjust the distance downward */
+            left: 600px; /* Adjust the distance to the right */
+        }
+        .section:nth-of-type(3) {
+            top: 860px; /* Adjust the distance downward */
+            left: 0px; /* Adjust the distance to the right */
+        }
+        .section:nth-of-type(4) {
+            top: 1300px; /* Adjust the distance downward */
+            left: 650px; /* Adjust the distance to the right */
+        }
+        .about-image, .our-team-image, .wominjeka-image {
+            height: 330px; /* Resize image height */
+            width: auto; /* Maintain aspect ratio */
+            opacity: 0;
+            transition: opacity 4s ease-in-out; /* Add fade-in effect */
+        }
+        .about-image {
+            position: absolute;
+            top: 50px; /* Adjust as needed */
+            left: 590px; /* Adjust as needed */
+            margin-left: 20px; /* Add space from the box */
+        }
+        .our-team-image {
+            height: 350px; /* Resize image height */
+            position: absolute;
+            top: 400px; /* Adjust as needed */
+            left: 0px; /* Adjust as needed */
+            margin: 20px;
+            margin-top: 50px;
+        }
+        .wominjeka-image {
+            height: 350px; /* Resize image height */
+            width: auto;
+            position: absolute;
+            top: 860px; /* Adjust as needed */
+            left: 585px; /* Adjust as needed *//* Add space from the box */
+            margin-top: 50px;
+            margin-right: 20px;
+        }
+        footer {
+            background-color: rgb(56, 53, 53);
+            display: flex;
+            align-items: center;
+            justify-content: center; /* Center align the text */
+            padding: 0 20px; /* Add some padding */
+            min-height: 75px;
+            width: 100%; /* Ensure the footer spans the full width */
+            bottom: 0; /* Position the footer at the bottom */
+            z-index: 1000; /* Ensure the footer is above other elements */
+        }
+        .footer-text {
+            text-align: center;
+            font-family: 'Copperplate', fantasy;
+            color: white;
+        }
+        .about-image, .our-team-image, .wominjeka-image {
+    opacity: 0;
+    transition: opacity 2s ease-in-out; /* Add fade-in and fade-out effect */
+}
+
+.fade-in {
+    opacity: 1;
+}
+
+
+    </style>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const images = document.querySelectorAll(".about-image, .our-team-image, .wominjeka-image");
+            images.forEach(image => {
+                image.style.opacity = 1;
+            });
+        });
+    </script>
+</head>
+<body>
+    <header>
+        <h1><strong>
+            <a href="file:///C:/Users/ARB0001/OneDrive%20-%20Melbourne%20High%20School/Year%209/Wominjeka%20Project/Website/Home%20Page.html" style="text-decoration: none; color: inherit;">
+            2050 MELBOURNE</strong></a></h1>
+        <nav>
+            <a href="file:///C:/Users/ARB0001/OneDrive%20-%20Melbourne%20High%20School/Year%209/Wominjeka%20Project/Website/Home%20Page.html">
+                <button type="button" class="button">Home</button>
+            </a>
+            <a href="file:///C:/Users/ARB0001/OneDrive%20-%20Melbourne%20High%20School/Year%209/Wominjeka%20Project/Website/Historical%20Source%20Analysis%20Page.html">
+                <button type="button" class="button">Historical Source Analysis</button>
+            </a>
+            <a href="file:///C:/Users/ARB0001/OneDrive%20-%20Melbourne%20High%20School/Year%209/Wominjeka%20Project/Website/The%20Problem%20Page.html">
+                <button type="button" class="button">The Problem</button>
+            </a>
+            <a href="file:///C:/Users/ARB0001/OneDrive%20-%20Melbourne%20High%20School/Year%209/Wominjeka%20Project/Website/Data%20and%20Solutions%20Page.html">
+                <button type="button" class="button">Data and Solutions</button>
+            </a>
+        </nav>
+    </header>
+
+    <main class="section-container" style="padding-top: 85px;"> <!-- Add top padding to avoid content overlap -->
+        <section id="about" class="section">
+            <div class="section-box">
+                <div class="section-title">
+                    <h3>What are <b><span class="yellow-underline">we about?</span></b></h3>
+                </div>
+                <div class="section-content">
+                    <p><b>2050 Melbourne</b> is an idea that by <span class="yellow-underline">2050 in Melbourne</span> we will have reduced our carbon emission levels to an almost non existent level.<br><br> Our website aims to provide an overview of the cause of carbon levels, the problems they create, and a solution to <span class="yellow-underline">reducing carbon levels</span> but in a way that doesn't affect our lives with a major negative impact.</p>
+                </div>
+            </div>
+            <img class="about-image" src="https://www.officebantomime.com/content/images/2022/07/Untitled-design--65-.png" alt="Image">
+        </section>
+        <img class="our-team-image" src="https://floridaloss.com/wp-content/uploads/2019/06/Our-Team.jpg" alt="Our Team Image">
+        <section id="services" class="section">
+            <div class="section-box">
+                <div class="section-title">
+                    <h3>Our <b><span class="yellow-underline">team</span></b></h3>
+                </div>
+                <div class="section-content">
+                    <u><h4>Our team behind this project consits of:</h4></u>
+                    <p>
+                    <span class="yellow-underline">Matthew Arbogast:</span><b> Website Developer </b><br><br>
+                    <b>Jayden Peng: </b><span class="yellow-underline">Researcher</span> <br><br>
+                    <span class="yellow-underline">Joshua Pang:</span><b> Researcher</b><br><br>
+                    <b>Tony Lee:  </b><span class="yellow-underline">Filled in the Log Book</span><br>
+                    </p>
+                </div>
+            </div>
+        </section>
+        <section id="Project" class="section">
+            <div class="section-box">
+                <div class="section-title">
+                    <h3>Wominjeka Project</h3>
+                </div>
+                <div class="section-content">
+                    <p>This website is part of our <span class="yellow-underline">Wominjeka Project.</span> <br><br>
+                    The question we chose to investigate was: <span class="yellow-underline">What can Melbourne do to meet its 2050 carbon reduction targets?</span>  
+                    <br> <br>We hope that this webpage helps you answer your queries and provide a <span class="yellow-underline">fulfilling answer to your question.</span>
+                    </p>
+                </div>
+            </div>
+        </section>
+        <img class="wominjeka-image" src="https://www.echoactive.com/images/easyblog_articles/599/wominjeka-800_400.jpg" alt="Wominjeka Project Image">
+    </main>
+    <footer>
+        <h1><a href="file:///C:/Users/ARB0001/OneDrive%20-%20Melbourne%20High%20School/Year%209/Wominjeka%20Project/Website/Home%20Page.html" style="text-decoration: none; color: inherit;">
+            2050 MELBOURNE - Wominjeka Project</strong></a></h1>
+    </footer>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('fade-in'); // Add fade-in class when element is visible
+                    } else {
+                        entry.target.classList.remove('fade-in'); // Remove fade-in class when element is not visible
+                    }
+                });
+            }, { threshold: 0.1 }); // Adjust the threshold as needed
+        
+            const images = document.querySelectorAll(".about-image, .our-team-image, .wominjeka-image");
+            images.forEach(image => {
+                observer.observe(image);
+            });
+        });
+        </script>
+        
+        
+        
+</body>
+</html>

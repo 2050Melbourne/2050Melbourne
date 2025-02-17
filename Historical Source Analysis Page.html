@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>What can Melbourne do to reach its 2050 carbon reduction targets?</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Link to your CSS file -->
+    <style>
+        h1 {
+            text-align: left;
+            font-family: 'Copperplate', fantasy;
+            color: white;
+            margin: 0; /* Remove default margin */
+        }
+        h2 {
+            text-align: center;
+            font-family: 'Oswald', sans-serif;
+            font-size: 30px;
+            color: white;
+        }
+        h3 {
+            text-align: center;
+            color: white;
+            font-size: 40px;
+            font-family: 'blippo', fantasy;
+        }
+        h4 {
+            text-align: center;
+            color: white;
+            font-size: 23px;
+            font-family: 'Oswald', sans-serif;
+            text-decoration: underline; /* Add underline to h4 */
+        }
+        p {
+            color: white;
+            text-align: center;
+            font-size: 20px;
+            font-family: 'Gill Sans', Gill Sans;
+        }
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: black;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            /* Add top margin to allow more scroll up */
+            margin-top: 75px;
+        }
+        header {
+            background-color: rgb(56, 53, 53);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 20px; /* Add some padding */
+            min-height: 75px;
+            position: fixed; /* Make the header fixed */
+            width: 100%; /* Ensure the header spans the full width */
+            top: 0; /* Position the header at the top */
+            z-index: 1000; /* Ensure the header is above other elements */
+        }
+        nav {
+            display: flex;
+            gap: 10px; /* Space between buttons */
+            padding-right: 30px;
+        }
+        .button {
+            background-color: lightyellow;
+            text-align: center;
+            display: block;
+            width: 175px;
+            height: 50px;
+            font-family: "Comic Sans MS";
+            border: none;
+            transition: box-shadow 0.3s ease, transform 0.3s ease, background-color 0.3s ease; /* Smooth transition */
+            border: 2px solid tan;
+            font-size: auto;
+        }
+        .button:hover {
+            box-shadow: 0 8px 16px rgba(255, 255, 255, 0.4); /* Stronger shadow on hover */
+            transform: scale(1.2); /* Slightly increase size on hover */
+            background-color: yellow; /* Change background color on hover */
+        }
+        .yellow-underline {
+            text-decoration: underline;
+            text-decoration-color: yellow;
+        }
+        .section-box {
+            border: 2px solid white;
+            padding: 10px;
+            margin: 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: rgba(0, 0, 0, 0.8);
+            width: 550px;
+        }
+        .section-title {
+            background-color: rgba(56, 53, 53, 0.8);
+            padding: 10px;
+            width: 550px;
+        }
+        .section-content {
+            padding: 10px;
+            width: 550px;
+        }
+        .section-container {
+            position: relative;
+            width: 1200px;
+            height: 2100px; /* Increase height to accommodate all sections */
+        }
+        .section {
+            position: absolute;
+        }
+        .section:nth-of-type(1) {
+            top: 0px;
+            left: 0px;
+        }
+        .section:nth-of-type(2) {
+            top: 550px; /* Adjust the distance downward */
+            left: 650px; /* Adjust the distance to the right */
+        }
+        .section:nth-of-type(3) {
+            top: 1100px; /* Adjust the distance downward */
+            left: 0px; /* Adjust the distance to the right */
+        }
+        .section:nth-of-type(4) {
+            top: 1625px; /* Adjust the distance downward */
+            left: 650px; /* Adjust the distance to the right */
+        }
+        .about-image, .our-team-image, .wominjeka-image {
+            height: 330px; /* Resize image height */
+            width: auto; /* Maintain aspect ratio */
+            opacity: 0;
+            transition: opacity 4s ease-in-out; /* Add fade-in effect */
+        }
+        .about-image {
+            position: absolute;
+            top: 100px; /* Adjust as needed */
+            left: 600px; /* Adjust as needed */
+            margin-left: 20px; /* Add space from the box */
+        }
+        .our-team-image {
+            height: 375px; /* Resize image height */
+            width:auto;
+            position: absolute;
+            top: 550px; /* Adjust as needed */
+            left: 0px; /* Adjust as needed */
+            margin: 20px;
+            margin-top: 50px;
+            padding-left: 15px;
+        }
+        .wominjeka-image {
+            height: 350px; /* Resize image height */
+            width: auto;
+            position: absolute;
+            top: 1100px; /* Adjust as needed */
+            left: 650px; /* Adjust as needed *//* Add space from the box */
+            margin-top: 50px;
+            margin-right: 20px;
+        }
+
+        .mooar-plant {
+            height: 350px; /* Resize image height */
+            width: auto;
+            position: absolute;
+            top: 1600px; /* Adjust as needed */
+            left: 30px; /* Adjust as needed *//* Add space from the box */
+            margin-top: 50px;
+            margin-right: 20px;
+        }
+
+        footer {
+            background-color: rgb(56, 53, 53);
+            display: flex;
+            align-items: center;
+            justify-content: center; /* Center align the text */
+            padding: 0 20px; /* Add some padding */
+            min-height: 75px;
+            width: 100%; /* Ensure the footer spans the full width */
+            bottom: 0; /* Position the footer at the bottom */
+            z-index: 1000; /* Ensure the footer is above other elements */
+        }
+        .footer-text {
+            text-align: center;
+            font-family: 'Copperplate', fantasy;
+            color: white;
+        }
+        .about-image, .our-team-image, .wominjeka-image {
+    opacity: 0;
+    transition: opacity 2s ease-in-out; /* Add fade-in and fade-out effect */
+}
+
+.fade-in {
+    opacity: 1;
+}
+
+
+    </style>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const images = document.querySelectorAll(".about-image, .our-team-image, .wominjeka-image");
+            images.forEach(image => {
+                image.style.opacity = 1;
+            });
+        });
+    </script>
+</head>
+<body>
+    <header>
+        <h1><strong>
+            <a href="#home" style="text-decoration: none; color: inherit;">
+            2050 MELBOURNE</strong></a></h1>
+        <nav>
+            <a href="file:///C:/Users/ARB0001/OneDrive%20-%20Melbourne%20High%20School/Year%209/Wominjeka%20Project/Website/Home%20Page.html">
+                <button type="button" class="button">Home</button>
+            </a>
+            <a href="file:///C:/Users/ARB0001/OneDrive%20-%20Melbourne%20High%20School/Year%209/Wominjeka%20Project/Website/Historical%20Source%20Analysis%20Page.html">
+                <button type="button" class="button">Historical Source Analysis</button>
+            </a>
+            <a href="file:///C:/Users/ARB0001/OneDrive%20-%20Melbourne%20High%20School/Year%209/Wominjeka%20Project/Website/The%20Problem%20Page.html">
+                <button type="button" class="button">The Problem</button>
+            </a>
+            <a href="file:///C:/Users/ARB0001/OneDrive%20-%20Melbourne%20High%20School/Year%209/Wominjeka%20Project/Website/Data%20and%20Solutions%20Page.html">
+                <button type="button" class="button">Data and Solutions</button>
+            </a>
+        </nav>
+    </header>
+
+    <main class="section-container" style="padding-top: 85px;"> <!-- Add top padding to avoid content overlap -->
+        <section id="about" class="section">
+            <div class="section-box">
+                <div class="section-title">
+                    <h3>Historical <b><span class="yellow-underline">Source Analysis</span></b></h3>
+                </div>
+                <div class="section-content">
+                    <p>This is an image of a Mooar plant in Keokuk, Iowa belonging to a company called DuPont. The factory began operation in 1890. The image of the factory above can be classified as a primary source, as it is an image of the original factory in 1890. This factory began operation during the Second Industrial Revolution, which occurred between 1870 and 1914. The Second Industrial Revolution saw the advancement of multiple industrial techniques, technologies, and infrastructure, such as the mass use of machinery in factories, the expansion of railroad tracks, and more.</p>
+                </div>
+            </div>
+            <img class="about-image" src="https://spectra.mhi.com/sites/g/files/jwhtju2216/files/2023-04/Carbon-Emissions-Climbed-Less-Than-Feared-in-2022-Despite-Coal-Resurgence.jpg" alt="Image">
+        </section>
+        <img class="our-team-image" src="https://th.bing.com/th/id/OIP.Ba3KhQqsPuwD0iQVoGz-TAHaE8?rs=1&pid=ImgDetMain" alt="Our Team Image">
+        <section id="services" class="section">
+            <div class="section-box">
+                <div class="section-title">
+                    <h3>Steel <b><span class="yellow-underline">Production</span></b></h3>
+                </div>
+                <div class="section-content">
+                    <p>
+                        Mass production of steel began during the Second Industrial Revolution, enabled by the invention of the Bessemer process by Sir Henry Bessemer several decades prior (Wikipedia, 2025). This meant cheaper construction of various industrial and commercial buildings, infrastructure, and machinery. There were also several advancements made in chemical processes, resulting in further mass production of various materials and products (Wikipedia, 2025). This tells us that the plant in the source was constructed during a period of rapid industrial expansion, when factories and mechanized production became increasingly widespread. Because of this industrial expansion, the use of fossil fuels and chemical processes that produce air pollution, such as the Bessemer Process, became increasingly common.  
+                    </p>
+                </div>
+            </div>
+        </section>
+        <section id="Project" class="section">
+            <div class="section-box">
+                <div class="section-title">
+                    <h3>Railroad Building</h3>
+                </div>
+                <div class="section-content">
+                    <p>Due to railroad expansion in that period, the use of coal-powered trains was greatly increased, alongside the use of coal-powered factories and powerplants. This eventually resulted in large amounts of CO2 being released into the atmosphere. In 1850, a total of 204.63Mt of CO2 emissions were produced. In comparison, a total of approximately 3.40 Gt of CO2 was produced in 1914, the year the Second Industrial Revolution ended. In 2022 this number had grown to 37.10 Gt of CO2 (Climate Watch, n.d). All of this evidence points to the Second Industrial Revolution being a major turning point when it comes to carbon emissions, with emissions being increased approximately 17-fold.
+                    </p>
+                </div>
+            </div>
+        </section>
+        <img class="wominjeka-image" src="https://th.bing.com/th/id/OIP.YFdjewl88Dwt3sLxfrRlAAHaD8?w=311&h=180&c=7&r=0&o=5&dpr=1.5&pid=1.7" alt="Wominjeka Project Image">
+        <section id="Project" class="section">
+        <div class="section-box">
+            <div class="section-title">
+                <h3>Mooar Plant</h3>
+            </div>
+            <div class="section-content">
+                <p>All of this information tells us that the Mooar plant shown in the source image is a direct representation of the industrialisation in the Second Industrial Revolution. As a factory built during the Revolution, it likely had a heavy reliance on fossil fuels and air pollution producing procedures and processes. This factory was just one of many that played a role in shaping the way we produce and transport goods, eventually leading to the climate issues we all face today. <br> <br>(To the Left) DuPont’s Mooar plant in Iowa in 1890. Source: Hagley.org </p>
+                </p>
+            </div>
+        </div>
+    </section>
+    <img class="mooar-plant" src="https://www.hagley.org/sites/default/files/dupont-company-boiler-mooar-plant-keokuk-iowa-hagley.JPG" alt="Wominjeka Project Image">
+
+    </main>
+    <footer>
+        <h1><a href="#home" style="text-decoration: none; color: inherit;">
+            2050 MELBOURNE - Wominjeka Project</strong></a></h1>
+    </footer>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('fade-in'); // Add fade-in class when element is visible
+                    } else {
+                        entry.target.classList.remove('fade-in'); // Remove fade-in class when element is not visible
+                    }
+                });
+            }, { threshold: 0.1 }); // Adjust the threshold as needed
+        
+            const images = document.querySelectorAll(".about-image, .our-team-image, .wominjeka-image");
+            images.forEach(image => {
+                observer.observe(image);
+            });
+        });
+        </script>
+        
+        
+        
+</body>
+</html>
